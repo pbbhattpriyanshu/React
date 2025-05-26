@@ -12,8 +12,6 @@ function Navbar() {
             <h4 className='hover:text-emerald-500 text-xl'>Contact</h4>
         </div>
     </nav>
-    
-    
     </>
   )
 }
