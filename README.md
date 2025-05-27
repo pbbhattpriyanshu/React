@@ -82,3 +82,35 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+# 🧭 React Router DOM Demo
+
+A professional React project showcasing navigation using **React Router DOM**.
+
+---
+
+## 🚀 Features
+
+- 🔄 Client-side routing with `react-router-dom`
+- 🗂️ Multi-page SPA architecture
+- ⏪ Nested routing and redirects
+- 🔐 Protected routes (login simulation)
+- 🌐 URL parameters & query handling
+
+---
+
+## 🛠️ Tech Stack
+
+- ⚛️ React
+- 🧭 React Router DOM (v6+)
+- 💅 CSS Modules / Tailwind (optional)
+- 🧪 Jest & React Testing Library (optional)
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/your-username/react-router-dom-demo.git
+cd react-router-dom-demo
+npm install
