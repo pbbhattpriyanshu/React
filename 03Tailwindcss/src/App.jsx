@@ -5,6 +5,7 @@ import Navbar from './Components/Navbar.jsx'
 import Footer from './Components/Footer.jsx'  
 import Card from './Components/Card.jsx'
 import Ex from './Components/Ex.jsx'
+// import axios from 'axios' -->  it is commonly used to fetch data from APIs
 import axios from 'axios'
 
 
