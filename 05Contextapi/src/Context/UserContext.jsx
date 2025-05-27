@@ -8,7 +8,7 @@ const UserContext = ({children}) => {
     }
   return (
     <div>
-        {children}
+        {children} 
     </div>
   )
 }
