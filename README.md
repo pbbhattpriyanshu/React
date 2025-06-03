@@ -30,6 +30,24 @@ Welcome to the world of **React.js** – a powerful JavaScript library for build
 
 ---
 
+## Lessons Learned
+
+1. Components/Props/JSX
+2. useState - Hook
+3. Props as children and function
+4. State lifting
+5. Conditional Rendering
+6. Event Handling
+7. useContext - Hook
+8. Routing
+9. Redux Toolkit
+10. useRef - Hook
+11. useMemo - Hook
+12. useCallback - Hook
+13. Project Notes App
+14. Deploying React App
+
+
 ## 🔍 Real DOM vs Virtual DOM
 
 | Feature        | Real DOM                              | Virtual DOM                        |

@@ -84,6 +84,7 @@ useEffect(() => {
         </div>
       })}
     </div>
+    < Footer />
     </>
   )
 }
