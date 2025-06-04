@@ -1,25 +1,25 @@
 import { useState } from 'react'
-import LogoutBtn from './Components/LogoutBtn';
-import LoginBtn from './Components/LoginBtn';
+import Button from './Components/Button'
+// import LogoutBtn from './Components/LogoutBtn';
+// import LoginBtn from './Components/LoginBtn';
 function App() {
-  const [isLoggedIn, setLoggedIn] = useState(false);
-
-  // Early return
-  if (!isLoggedIn) {
-    return (
-      <LoginBtn/>
-    )
-  }
+  // const [isLoggedIn, setLoggedIn] = useState(false);
+  // // Early return
+  // if (!isLoggedIn) {
+  //   return (
+  //     <LoginBtn/>
+  //   )
+  // }
 
   // Logical operator
-  return (
-    <div>
-      <h1>Conditional Rendering</h1>
-      <div>
-        {isLoggedIn && <LogoutBtn/>}
-      </div>
-    </div>
-  )
+  // return (
+  //   <div>
+  //     <h1>Conditional Rendering</h1>
+  //     <div>
+  //       {isLoggedIn && <LogoutBtn/>}
+  //     </div>
+  //   </div>
+  // )
 
 
   // Ternary Operator
@@ -39,6 +39,12 @@ function App() {
   //     <LoginBtn/>
   //   )
   // }
+
+  return (
+  // Button - Component
+  <Button/> 
+
+  )
 }
 
 export default App
