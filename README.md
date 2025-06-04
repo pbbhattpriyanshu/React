@@ -38,14 +38,15 @@ Welcome to the world of **React.js** – a powerful JavaScript library for build
 4. State lifting
 5. Conditional Rendering
 6. Event Handling
-7. useContext - Hook
-8. Routing
-9. Redux Toolkit
-10. useRef - Hook
-11. useMemo - Hook
-12. useCallback - Hook
-13. Project Notes App
-14. Deploying React App
+7. useEffect -Hook
+8. useContext - Hook
+9. Routing
+10. Redux Toolkit
+11. useRef - Hook
+12. useMemo - Hook
+13. useCallback - Hook
+14. Project Notes App
+15. Deploying React App
 
 
 ## 🔍 Real DOM vs Virtual DOM
