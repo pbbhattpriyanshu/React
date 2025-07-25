@@ -1,0 +1,22 @@
+body {
+    background-color: cyan;
+}
+
+header {
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+}
+
+.one {
+    margin-top: 1rem;
+    background-color: blueviolet;
+    padding: 5px;
+    border-radius:0.5rem;
+}
+p {
+    padding-left: 50px;
+    padding-right: 50px;
+}
