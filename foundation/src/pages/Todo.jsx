@@ -1,50 +1,87 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const Todo = () => {
+  const [count, setCount] = useState(0);
+  const [fruit, setFruit] = useState("Apple");
+  const [display, setDisplay] = useState(true);
+  const [val, setVal] = useState('')
 
-  const [ count, setCount ] = useState(0);
-  const [ fruit, setFruit ] = useState("Apple");
-  const [ display, setDisplay ] = useState(true);
- 
   const fruitsBacket = [
-    "mango", "graphes", "anar", "oranges", "banana", "watermelon", "papaya"
-  ]
+    "mango",
+    "graphes",
+    "anar",
+    "oranges",
+    "banana",
+    "watermelon",
+    "papaya",
+  ];
 
   const changeHandler = () => {
-    setFruit(fruitsBacket.map(fruit => fruit + " 🍎"));
-  }
+    setFruit(fruitsBacket.map((fruit) => fruit + " 🍎"));
+  };
 
   const switchButtonOf = () => {
-    setDisplay(false)
-  }
+    setDisplay(false);
+  };
   const switchButtonOn = () => {
-    setDisplay(true)
-  }
+    setDisplay(true);
+  };
 
+  const clearAll = () => {
+    setVal("")
+  }
 
   return (
     <>
-    <div className='flex justify-center items-center mt-9 gap-5'>
-      <h1 className='text-white'>Count: {count}</h1>
-      <button onClick={() => setCount(count + 1)} className='bg-green-500 p-2'>Add</button>
-      <button onClick={() => setCount(count - 1)} className='bg-red-500 p-2'>Sub</button>
+      <div className="flex justify-center items-center mt-9 gap-5">
+        <h1 className="text-white">Count: {count}</h1>
+        <button
+          onClick={() => setCount(count + 1)}
+          className="bg-green-500 p-2"
+        >
+          Add
+        </button>
+        <button onClick={() => setCount(count - 1)} className="bg-red-500 p-2">
+          Sub
+        </button>
 
-      <h1 className='text-white'>Fruit: {fruit}</h1>
-      <button onClick={changeHandler} className='bg-yellow-500 p-2'>Change</button>
+        <h1 className="text-white">Fruit: {fruit}</h1>
+        <button onClick={changeHandler} className="bg-yellow-500 p-2">
+          Change
+        </button>
 
-      { display?<h1>💡</h1>:null}
-      <button onClick={switchButtonOf} className='bg-red-600 p-2 text-white'>Switch off</button>
-      <button onClick={switchButtonOn} className='bg-green-600 p-2 text-white'>Switch on</button>
+        {display ? <h1>💡</h1> : null}
+        <button onClick={switchButtonOf} className="bg-red-600 p-2 text-white">
+          Switch off
+        </button>
+        <button
+          onClick={switchButtonOn}
+          className="bg-green-600 p-2 text-white"
+        >
+          Switch on
+        </button>
 
-       { count==0?<div className='h-10 w-10 p-7 bg-green-500 flex justify-center items-center text-center'>Green</div>
-       :count==1?<div className='h-10 w-10 p-7 bg-yellow-500 flex justify-center items-center text-center'>Yellow</div>
-       :count==2?<div className='h-10 w-10 p-7 bg-red-500 flex justify-center items-center text-center'>Red</div>
-       :null}
-    </div>
-    
-   
+        {count == 0 ? (
+          <div className="h-10 w-10 p-7 bg-green-500 flex justify-center items-center text-center">
+            Green
+          </div>
+        ) : count == 1 ? (
+          <div className="h-10 w-10 p-7 bg-yellow-500 flex justify-center items-center text-center">
+            Yellow
+          </div>
+        ) : count == 2 ? (
+          <div className="h-10 w-10 p-7 bg-red-500 flex justify-center items-center text-center">
+            Red
+          </div>
+        ) : null}
+
+        <h1>Get input field value</h1>
+        <h2>{val}</h2>
+        <input onChange={(e) => setVal(e.target.value)} value={val} type="text" placeholder="write something" className="p-4 rounded-2xl outline-none text-black" />
+        <button className="bg-red-600 p-2 text-white" onClick={clearAll}>Clear</button>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Todo
+export default Todo;
