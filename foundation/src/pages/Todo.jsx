@@ -11,6 +11,7 @@ const Todo = () => {
   const [skill, setSkill] = useState([]);
   const [gender, setGender] = useState("male");
   const [city, setCity] = useState("");
+
   const fruitsBacket = [
     "mango",
     "grapes",
@@ -19,6 +20,69 @@ const Todo = () => {
     "banana",
     "watermelon",
     "papaya",
+  ];
+
+  const userData = [
+    {
+      name: "Pankaj kandpal",
+      age: 19,
+      email: "kandpalpankaj@gmail.com",
+      id: 1,
+    },
+    {
+      name: "Priyanshu Bhatt",
+      age: 21,
+      email: "priyanshu.bhatt@gmail.com",
+      id: 2,
+    },
+    {
+      name: "Anjali Verma",
+      age: 23,
+      email: "anjali.verma23@yahoo.com",
+      id: 3,
+    },
+    {
+      name: "Rohit Sharma",
+      age: 25,
+      email: "rohitsharma25@gmail.com",
+      id: 4,
+    },
+    {
+      name: "Sneha Gupta",
+      age: 22,
+      email: "sneha.gupta22@hotmail.com",
+      id: 5,
+    },
+    {
+      name: "Aman Singh",
+      age: 24,
+      email: "amansingh24@gmail.com",
+      id: 6,
+    },
+    {
+      name: "Neha Mehta",
+      age: 20,
+      email: "neha.mehta20@yahoo.com",
+      id: 7,
+    },
+    {
+      name: "Karan Joshi",
+      age: 26,
+      email: "karanjoshi26@gmail.com",
+      id: 8,
+    },
+    {
+      name: "Ritika Choudhary",
+      age: 22,
+      email: "ritika.choudhary22@gmail.com",
+      id: 9,
+    },
+    {
+      name: "Arjun Rawat",
+      age: 23,
+      email: "arjun.rawat23@gmail.com",
+      id: 10,
+    },
   ];
 
   const changeHandler = () => {
@@ -52,9 +116,9 @@ const Todo = () => {
           and input handling.
         </p>
       </header>
-      <div className="min-h-screen bg-gray-900 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 text-white">
+      <div className="min-h-screen bg-gray-900 columns-1 sm:columns-2 lg:columns-3 gap-8 p-8 text-white">
         {/* Counter Section */}
-        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center">
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8">
           <h2 className="text-2xl font-bold mb-4">Counter</h2>
           <p className="text-lg mb-4">
             Count: <span className="font-mono">{count}</span>
@@ -96,7 +160,7 @@ const Todo = () => {
         </section>
 
         {/* Fruit Section */}
-        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center">
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8">
           <h2 className="text-2xl font-bold mb-4">Fruit Basket</h2>
           <p className="text-lg mb-4">
             Fruit: <span className="font-mono">{fruit}</span>
@@ -110,7 +174,7 @@ const Todo = () => {
         </section>
 
         {/* Switch Section */}
-        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center">
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8">
           <h2 className="text-2xl font-bold mb-4">Light Switch</h2>
           {display && <h3 className="text-4xl mb-4">💡</h3>}
           <div className="flex justify-center gap-3">
@@ -130,7 +194,7 @@ const Todo = () => {
         </section>
 
         {/* Input Section */}
-        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center">
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8">
           <h2 className="text-2xl font-bold mb-4">Input Playground</h2>
           <p className="mb-2">Current Value:</p>
           <h3 className="text-yellow-300 font-mono mb-4">{val}</h3>
@@ -151,7 +215,7 @@ const Todo = () => {
           </div>
         </section>
         {/* Form Controller */}
-        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center">
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8">
           <h2 className="text-2xl font-bold mb-4">Form Controller</h2>
           <p className="mb-2">
             Name: <span className="text-yellow-300 font-mono mb-4">{name}</span>
@@ -263,7 +327,7 @@ const Todo = () => {
           <p className="mb-2 mt-4">{skill.toString()}</p>
         </section>
         {/* Handle Radio and Dropdown */}
-        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center">
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8 mt-5">
           <h2 className="text-2xl font-bold mb-4 text-white">
             Handle Radio and Dropdown
           </h2>
@@ -349,6 +413,38 @@ const Todo = () => {
             Selected City:{" "}
             <span className="text-yellow-300 font-mono">{city}</span>
           </p>
+        </section>
+        {/* Loop in JSX with Map function */}
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8 mx-auto overflow-x-auto">
+          <h2 className="text-2xl font-bold mb-6 text-white">Map function</h2>
+
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr className="bg-gray-700 text-yellow-300">
+                  <th className="p-3 text-left">Id</th>
+                  <th className="p-3 text-left">Name</th>
+                  <th className="p-3 text-left">Email</th>
+                  <th className="p-3 text-left">Age</th>
+                </tr>
+              </thead>
+              <tbody>
+                {userData.map((user) => (
+                  <tr
+                    key={user.id}
+                    className="border-b border-gray-600 hover:bg-gray-700 transition"
+                  >
+                    <td className="p-3 text-white">{user.id}</td>
+                    <td className="p-3 text-white">{user.name}</td>
+                    <td className="p-3 text-blue-300 break-words">
+                      {user.email}
+                    </td>
+                    <td className="p-3 text-white">{user.age}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </section>
       </div>
     </div>
