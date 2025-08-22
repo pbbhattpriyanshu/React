@@ -7,7 +7,6 @@ header {
     background-color: black;
     display: flex;
     justify-content: center;
-    border-radius: 2rem;
 }
 
 .one {
