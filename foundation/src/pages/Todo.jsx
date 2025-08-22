@@ -446,6 +446,10 @@ const Todo = () => {
             </table>
           </div>
         </section>
+        {/* Reuse Component in loop */}
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8 mx-auto overflow-x-auto">
+          <h2 className="text-2xl font-bold mb-6 text-white"> Reuse Component in loop </h2>
+        </section>
       </div>
     </div>
   );
