@@ -8,6 +8,7 @@ const Todo = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [skill, setSkill] = useState([]);
 
   const fruitsBacket = [
     "mango",
@@ -23,6 +24,15 @@ const Todo = () => {
     setFruit(fruitsBacket.map((fruit) => fruit + " 🍎"));
   };
 
+  const handleSkills  = (event) => {
+    console.log(event.target.value, event.target.checked);
+    if (event.target.checked) {
+      setSkill([...skill, event.target.value])
+    } else {
+      setSkill([...skill.filter((item) => item!=event.target.value)])
+    }
+  }
+
   const switchButtonOff = () => setDisplay(false);
   const switchButtonOn = () => setDisplay(true);
 
@@ -32,9 +42,12 @@ const Todo = () => {
     <div className="min-h-screen bg-gray-900 flex flex-col items-center p-8 text-white space-y-10">
       {/* Main Heading */}
       <header className="text-center space-y-2">
-        <h1 className="text-4xl font-extrabold tracking-wide">Interactive Playground</h1>
+        <h1 className="text-4xl font-extrabold tracking-wide">
+          Interactive Playground
+        </h1>
         <p className="text-gray-400">
-          A mini React + Tailwind demo with counters, fruit basket, switches, and input handling.
+          A mini React + Tailwind demo with counters, fruit basket, switches,
+          and input handling.
         </p>
       </header>
 
@@ -138,20 +151,113 @@ const Todo = () => {
       {/* Form Controller */}
       <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center">
         <h2 className="text-2xl font-bold mb-4">Form Controller</h2>
-        <p className="mb-2">Name: <span className="text-yellow-300 font-mono mb-4">{name}</span></p>
-        <p className="mb-2">Email: <span className="text-yellow-300 font-mono mb-4">{email}</span></p>
-        <p className="mb-2">Password: <span className="text-yellow-300 font-mono mb-4">{password}</span></p>
-        
+        <p className="mb-2">
+          Name: <span className="text-yellow-300 font-mono mb-4">{name}</span>
+        </p>
+        <p className="mb-2">
+          Email: <span className="text-yellow-300 font-mono mb-4">{email}</span>
+        </p>
+        <p className="mb-2">
+          Password:{" "}
+          <span className="text-yellow-300 font-mono mb-4">{password}</span>
+        </p>
+
         <form action="" method="get">
-          <input value={name} onChange={(event) => setName(event.target.value)} className="p-3 rounded-lg outline-none text-black flex-1 m-5 w-72" type="text" placeholder="Enter your name"/>
+          <input
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            className="p-3 rounded-lg outline-none text-black flex-1 m-5 w-72"
+            type="text"
+            placeholder="Enter your name"
+          />
           <br />
-          <input value={email} onChange={(event) => setEmail(event.target.value)} className="p-3 rounded-lg outline-none text-black flex-1 m-5 w-72" type="text" placeholder="Enter your email"/>
+          <input
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            className="p-3 rounded-lg outline-none text-black flex-1 m-5 w-72"
+            type="text"
+            placeholder="Enter your email"
+          />
           <br />
-          <input value={password} onChange={(event) => setPassword(event.target.value)} className="p-3 rounded-lg outline-none text-black flex-1 m-5 w-72" type="password" placeholder="Enter Password" />
+          <input
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            className="p-3 rounded-lg outline-none text-black flex-1 m-5 w-72"
+            type="password"
+            placeholder="Enter Password"
+          />
           <br />
-          <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg mt-5">Submit</button>
-          <button onClick={() => {setName(''); setEmail(''); setPassword('')}} className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg mt-5 ml-5">Clear All</button>
+          <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg mt-5">
+            Submit
+          </button>
+          <button
+            onClick={() => {
+              setName("");
+              setEmail("");
+              setPassword("");
+            }}
+            className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg mt-5 ml-5"
+          >
+            Clear All
+          </button>
         </form>
+      </section>
+      {/* Check box */}
+      <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md">
+        <h2 className="text-2xl font-bold mb-2 text-center">CheckBoxes</h2>
+        <h3 className="text-lg font-light mb-6 text-center text-gray-300">
+          Select your Skills
+        </h3>
+
+        <div className="space-y-4">
+          {/* Java */}
+          <label
+            htmlFor="java"
+            className="flex items-center bg-gray-700 p-3 rounded-lg cursor-pointer hover:bg-gray-600 transition"
+          >
+            <input
+              onChange={handleSkills}
+              type="checkbox"
+              id="java"
+              value="java"
+              className="form-checkbox h-5 w-5 text-yellow-400 rounded focus:ring-yellow-400"
+            />
+            <span className="ml-3 text-yellow-400 font-medium">Java</span>
+          </label>
+
+          {/* JavaScript */}
+          <label
+            htmlFor="javaScript"
+            className="flex items-center bg-gray-700 p-3 rounded-lg cursor-pointer hover:bg-gray-600 transition"
+          >
+            <input
+              onChange={handleSkills}
+              type="checkbox"
+              id="javaScript"
+              value="javaScript"
+              className="form-checkbox h-5 w-5 text-yellow-400 rounded focus:ring-yellow-400"
+            />
+            <span className="ml-3 text-yellow-400 font-medium">JavaScript</span>
+          </label>
+
+          {/* Python */}
+          <label
+            htmlFor="python"
+            className="flex items-center bg-gray-700 p-3 rounded-lg cursor-pointer hover:bg-gray-600 transition"
+          >
+            <input
+              onChange={handleSkills}
+              type="checkbox"
+              id="python"
+              value="python"
+              className="form-checkbox h-5 w-5 text-yellow-400 rounded focus:ring-yellow-400"
+            />
+            <span className="ml-3 text-yellow-400 font-medium">Python</span>
+          </label>
+        </div>
+         <p className="mb-2 mt-4">
+          {skill.toString()}
+        </p>
       </section>
     </div>
   );
