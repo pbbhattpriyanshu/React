@@ -532,6 +532,13 @@ const Todo = () => {
             </div>
           ))}
         </section>
+          {/* useEffect Hook */}
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8 mx-auto overflow-x-auto">
+          <h2 className="text-2xl font-bold mb-6 text-white">
+            {" "}
+           useEffect Hook{" "}
+          </h2>
+          </section>
       </div>
     </div>
   );
