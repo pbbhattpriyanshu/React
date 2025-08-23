@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import User from "../components/User";
+import Clock from "../components/Clock";
 
 const Todo = () => {
   const [count, setCount] = useState(0);
@@ -12,6 +13,7 @@ const Todo = () => {
   const [skill, setSkill] = useState([]);
   const [gender, setGender] = useState("male");
   const [city, setCity] = useState("");
+  const [color, setColor] = useState("green")
 
   const fruitsBacket = [
     "mango",
@@ -59,30 +61,6 @@ const Todo = () => {
       age: 24,
       email: "amansingh24@gmail.com",
       id: 6,
-    },
-    {
-      name: "Neha Mehta",
-      age: 20,
-      email: "neha.mehta20@yahoo.com",
-      id: 7,
-    },
-    {
-      name: "Karan Joshi",
-      age: 26,
-      email: "karanjoshi26@gmail.com",
-      id: 8,
-    },
-    {
-      name: "Ritika Choudhary",
-      age: 22,
-      email: "ritika.choudhary22@gmail.com",
-      id: 9,
-    },
-    {
-      name: "Arjun Rawat",
-      age: 23,
-      email: "arjun.rawat23@gmail.com",
-      id: 10,
     },
   ];
 
@@ -449,15 +427,37 @@ const Todo = () => {
         </section>
         {/* Reuse Component in loop */}
         <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8 mx-auto overflow-x-auto">
-          <h2 className="text-2xl font-bold mb-6 text-white"> Reuse Component in loop </h2>
+          <h2 className="text-2xl font-bold mb-6 text-white">
+            {" "}
+            Reuse Component in loop{" "}
+          </h2>
 
-          {
-            userData.map((user) => (
-              <div key={user}>
-                < User data={user}/>
-              </div>
-            ))
-          }
+          {userData.map((user) => (
+            <div key={user}>
+              <User data={user} />
+            </div>
+          ))}
+        </section>
+        {/* Default Props in React */}
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8 mx-auto overflow-x-auto">
+          <h2 className="text-2xl font-bold mb-6 text-white">
+            {" "}
+            Default Props in React{" "}
+          </h2>
+
+          <select
+            className="bg-slate-700 text-white p-2 rounded-lg border border-gray-600 focus:ring-2 focus:ring-yellow-400 outline-none"
+            onChange={(event) => setColor(event.target.value)}
+          >
+            <option value={"green"}>Green</option>
+            <option value={"yellow"}>Yellow</option>
+            <option value={"red"}>Red</option>
+            <option value={"blue"}>Blue</option>
+          </select>
+
+          <div className="flex items-center justify-center">
+            <Clock color={color}  />
+          </div>
         </section>
       </div>
     </div>
