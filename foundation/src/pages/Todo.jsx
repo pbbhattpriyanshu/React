@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import User from "../components/User";
 import Clock from "../components/Clock";
+import Company from "../components/Company";
 
 const Todo = () => {
   const [count, setCount] = useState(0);
@@ -13,7 +14,7 @@ const Todo = () => {
   const [skill, setSkill] = useState([]);
   const [gender, setGender] = useState("male");
   const [city, setCity] = useState("");
-  const [color, setColor] = useState("green")
+  const [color, setColor] = useState("green");
 
   const fruitsBacket = [
     "mango",
@@ -61,6 +62,65 @@ const Todo = () => {
       age: 24,
       email: "amansingh24@gmail.com",
       id: 6,
+    },
+  ];
+
+  const companyData = [
+    {
+      name: "Tata Consultancy Services (TCS)",
+      city: "Mumbai",
+      website: "https://www.tcs.com",
+      employee: [
+        {
+          name: "Pankaj kandpal",
+          age: 19,
+          email: "kandpalpankaj@gmail.com",
+        },
+        {
+          name: "Priyanshu Bhatt",
+          age: 21,
+          email: "priyanshu.bhatt@gmail.com",
+        },
+        {
+          name: "Anjali Verma",
+          age: 23,
+          email: "anjali.verma23@yahoo.com",
+        },
+      ],
+    },
+    {
+      name: "Infosys",
+      city: "Bengaluru",
+      website: "https://www.infosys.com",
+    },
+    {
+      name: "Wipro",
+      city: "Bengaluru",
+      website: "https://www.wipro.com",
+    },
+    {
+      name: "Tech Mahindra",
+      city: "Pune",
+      website: "https://www.techmahindra.com",
+    },
+    {
+      name: "HCL Technologies",
+      city: "Noida",
+      website: "https://www.hcltech.com",
+      employee: [
+        {
+          name: "Rohit Sharma",
+          age: 25,
+          email: "rohitsharma25@gmail.com",
+          id: 4,
+        },
+        {
+          name: "Sneha Gupta",
+          age: 22,
+          email: "sneha.gupta22@hotmail.com",
+          id: 5,
+        },
+      ],
     },
   ];
 
@@ -456,8 +516,21 @@ const Todo = () => {
           </select>
 
           <div className="flex items-center justify-center">
-            <Clock color={color}  />
+            <Clock color={color} />
           </div>
+        </section>
+        {/* Nested looping in Components */}
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8 mx-auto overflow-x-auto">
+          <h2 className="text-2xl font-bold mb-6 text-white">
+            {" "}
+            Nested looping{" "}
+          </h2>
+
+          {companyData.map((company, index) => (
+            <div key={index}>
+              <Company company={company} />
+            </div>
+          ))}
         </section>
       </div>
     </div>
