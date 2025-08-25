@@ -2,7 +2,7 @@ import React from "react";
 
 const Tailwind = () => {
   return (
-    <div>
+    <div className="sm:bg-yellow-500 md:bg-amber-900">
       {/* <div className="h-12 w-full bg-violet-600 border-2 border-cyan rounded-xl p-2 ">
         <h1 className="text-xl mb-2 pb-5 text-red-500 text-center font-mono font-semibold">
           Software Developer
