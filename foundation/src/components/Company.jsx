@@ -2,7 +2,6 @@ import React from "react";
 import Employee from "./Employee";
 
 const Company = ({ company }) => {
-  console.log(company);
 
   return (
     <div className="p-9 m-10 w-80 border border-red-500 rounded-xl">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import User from "../components/User";
 import Clock from "../components/Clock";
 import Company from "../components/Company";
@@ -15,6 +15,9 @@ const Todo = () => {
   const [gender, setGender] = useState("male");
   const [city, setCity] = useState("");
   const [color, setColor] = useState("green");
+  const [counter, setCounter] = useState(0);
+  const [data, setData] = useState(0);
+
 
   const fruitsBacket = [
     "mango",
@@ -141,6 +144,21 @@ const Todo = () => {
   const switchButtonOn = () => setDisplay(true);
 
   const clearAll = () => setVal("");
+
+  useEffect(() => {
+    // callOnce();
+    counterFunction()
+  }, [counter])
+
+  function callOnce() {
+    console.log("Callonce function called");
+  }
+
+ 
+  function counterFunction() {
+    console.log("Count: ", counter);
+    
+  }
 
   return (
     <div className=" bg-gray-900">
@@ -538,6 +556,9 @@ const Todo = () => {
             {" "}
            useEffect Hook{" "}
           </h2>
+
+          <button className="h-10 w-24 bg-green-500 p-2 rounded-lg" onClick={() => setCounter(counter + 1)}>Counter {counter}</button>
+          <button className="h-10 w-24 bg-violet-500 p-2 rounded-lg ml-3" onClick={() => setData(data + 1)}>Data {data}</button>
           </section>
       </div>
     </div>
