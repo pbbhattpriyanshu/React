@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import User from "../components/User";
 import Clock from "../components/Clock";
 import Company from "../components/Company";
+import Counter from "../components/Counter";
 
 const Todo = () => {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ const Todo = () => {
   const [color, setColor] = useState("green");
   const [counter, setCounter] = useState(0);
   const [data, setData] = useState(0);
+  const [counting, setCounting] = useState(0);
 
 
   const fruitsBacket = [
@@ -550,7 +552,7 @@ const Todo = () => {
             </div>
           ))}
         </section>
-          {/* useEffect Hook */}
+        {/* useEffect Hook */}
         <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8 mx-auto overflow-x-auto">
           <h2 className="text-2xl font-bold mb-6 text-white">
             {" "}
@@ -559,7 +561,16 @@ const Todo = () => {
 
           <button className="h-10 w-24 bg-green-500 p-2 rounded-lg" onClick={() => setCounter(counter + 1)}>Counter {counter}</button>
           <button className="h-10 w-24 bg-violet-500 p-2 rounded-lg ml-3" onClick={() => setData(data + 1)}>Data {data}</button>
-          </section>
+        </section>
+        {/* useEffect Hook */}
+        <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8 mx-auto overflow-x-auto">
+          <h2 className="text-2xl font-bold mb-6 text-white">
+            {" "}
+            Props Side Effect - useEffect Hook{" "}
+          </h2>
+          <Counter count={counting}/>
+          <button className="h-10 w-24 bg-green-500 p-2 rounded-lg" onClick={() => setCounting(counting + 1)}>Counter {counting}</button>
+        </section>
       </div>
     </div>
   );
