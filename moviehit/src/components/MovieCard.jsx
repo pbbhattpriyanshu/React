@@ -1,19 +1,21 @@
 import React from "react";
 
 const MovieCard = ({ movie }) => {
+  //ALERT: When we click on favorite btn
   function onFavoriteClick() {
     alert("Clicked");
   }
   return (
     <>
-      <div className="max-w-xs bg-white shadow-lg rounded-2xl overflow-hidden hover:scale-105 transform transition duration-300">
+      <div className="max-w-xs bg-white m-2 shadow-lg rounded-2xl overflow-hidden hover:scale-105 transform transition duration-300">
         {/* Poster Section */}
         <div className="relative">
           <img
             src={movie.url}
             alt={movie.title}
-            className="w-full h-64 object-cover"
+            className="w-full h-56 object-cover"
           />
+          {/* fAV BTN*/}
           <div className="absolute top-2 right-2">
             <button
               className="bg-white/80 hover:bg-white text-red-500 rounded-full p-2 shadow-md transition"

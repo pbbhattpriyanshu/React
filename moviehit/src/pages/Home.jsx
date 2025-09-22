@@ -1,12 +1,14 @@
 import React from "react";
 import MovieCard from "../components/MovieCard";
 import { useState } from "react";
+import img from "../assets/images.jpeg";
 
 const Home = () => {
   const movies = [
     {
       id: 1,
       title: "Inception",
+      url: img,
       release_date: "2010-07-16",
       description:
         "A skilled thief leads a team into the dream world to steal secrets and implant ideas, blurring the line between reality and imagination.",
@@ -60,14 +62,24 @@ const Home = () => {
       description:
         "A betrayed Roman general seeks vengeance against the corrupt emperor who murdered his family and sent him into slavery.",
     },
+    {
+      id: 9,
+      title: "Iron man",
+      release_date: "2008-05-05",
+      description:
+        "A new era of Avengers.",
+    },
   ];
 
   const [searchQuery, setSearchQuery] = useState("")
 
   //todo handleSearch
+    console.log(searchQuery);
   function handleSearch(e) {
     e.preventDefault
   }
+
+  const MovieId = 1;
 
   return (
     <div className="home">

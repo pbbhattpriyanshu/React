@@ -1,0 +1,5 @@
+1. Foundations (Beginners → Strong Core)- 
+Components: function vs class, props, children, prop drilling- 
+State: useState, batching, initial state from props- 
+Events: synthetic events, event bubbling, binding- 
+Rendering: conditional rendering, lists & keys, controlled vs uncontrolled components

@@ -176,7 +176,7 @@ const Todo = () => {
         </p>
       </header>
       <div className="min-h-screen bg-gray-900 columns-1 sm:columns-2 lg:columns-3 gap-8 p-8 text-white">
-        {/* Counter Section */}
+        {/* Counter Section - useState */}
         <section className="bg-gray-800 p-6 rounded-2xl shadow-lg w-full max-w-md text-center break-inside-avoid mb-8">
           <h2 className="text-2xl font-bold mb-4">Counter</h2>
           <p className="text-lg mb-4">
