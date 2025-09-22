@@ -11,7 +11,7 @@ const MovieCard = ({ movie }) => {
         {/* Poster Section */}
         <div className="relative">
           <img
-            src={movie.url}
+            src={`httpS://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.title}
             className="w-full h-56 object-cover"
           />
