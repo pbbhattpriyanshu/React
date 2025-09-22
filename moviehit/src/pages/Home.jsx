@@ -66,33 +66,32 @@ const Home = () => {
       id: 9,
       title: "Iron man",
       release_date: "2008-05-05",
-      description:
-        "A new era of Avengers.",
+      description: "A new era of Avengers.",
     },
   ];
 
-  const [searchQuery, setSearchQuery] = useState("")
+  const [searchQuery, setSearchQuery] = useState("");
 
   //todo handleSearch
-    console.log(searchQuery);
+  console.log(searchQuery);
   function handleSearch(e) {
-    e.preventDefault
+    e.preventDefault;
   }
-
-  const MovieId = 1;
 
   return (
     <div className="home">
-        <form onSubmit={handleSearch} className="search-form">
-            <input
-             type="text"
-             placeholder="Search for movies... "
-             className="search-input"
-             value={searchQuery}
-             onChange={(e) => setSearchQuery(e.target.value)}
-            />
-            <button className="search-btn" type="submit">Search</button>
-        </form>
+      <form onSubmit={handleSearch} className="search-form">
+        <input
+          type="text"
+          placeholder="Search for movies... "
+          className="search-input"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <button className="search-btn" type="submit">
+          Search
+        </button>
+      </form>
       <h1 className="text-2xl font-bold mb-4">Home</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {movies.map((movie) => (
