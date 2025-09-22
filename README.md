@@ -165,7 +165,7 @@ A professional React project showcasing navigation using **React Router DOM**.
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/react-router-dom-demo.git
+git clone https://github.com/pbbhattpriyanshu/React.git
 cd react-router-dom-demo
 npm install
 ```
