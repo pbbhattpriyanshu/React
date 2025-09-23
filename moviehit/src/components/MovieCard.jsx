@@ -1,10 +1,13 @@
 import React from "react";
+import { useState } from "react";
 
 const MovieCard = ({ movie }) => {
-  //ALERT: When we click on favorite btn
-  function onFavoriteClick() {
-    alert("Clicked");
-  }
+  const [isFav, setIsFav] = useState(false);
+
+  const onFavoriteClick = () => {
+    setIsFav((prev) => !prev); // toggle state
+  };
+
   return (
     <>
       <div className="max-w-xs bg-white m-2 shadow-lg rounded-2xl overflow-hidden hover:scale-105 transform transition duration-300">
@@ -17,12 +20,16 @@ const MovieCard = ({ movie }) => {
           />
           {/* fAV BTN*/}
           <div className="absolute top-2 right-2">
-            <button
-              className="bg-white/80 hover:bg-white text-red-500 rounded-full p-2 shadow-md transition"
-              onClick={onFavoriteClick}
-            >
-              ♥
-            </button>
+             <button
+          onClick={onFavoriteClick}
+          className={`rounded-full p-2 shadow-md transition ${
+            isFav
+              ? "bg-red-500 text-white hover:bg-red-600"
+              : "bg-white/80 text-red-500 hover:bg-white"
+          }`}
+        >
+          {isFav ? "♥" : "♡"}
+        </button>
           </div>
         </div>
 

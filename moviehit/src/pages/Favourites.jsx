@@ -28,7 +28,8 @@ const MovieCard = ({ movie, onRemove }) => {
         <h3 className="text-lg font-semibold text-gray-800">{movie.title}</h3>
         <p className="text-xs text-gray-500 mt-1">{movie.release_date}</p>
         <p className="text-sm text-gray-600 mt-3 line-clamp-3">
-          {movie.description || "No description available. This is a placeholder text to describe the movie briefly."}
+          {movie.description ||
+            "No description available. This is a placeholder text to describe the movie briefly."}
         </p>
       </div>
     </div>
@@ -49,38 +50,22 @@ const Favourites = () => {
     }
   }, []);
 
-  // Helper to persist to localStorage
-  const persist = (list) => {
-    setFavs(list);
-    try {
-      localStorage.setItem("favourites", JSON.stringify(list));
-    } catch (e) {
-      console.error("Failed to save favourites", e);
-    }
-  };
-
-  const handleRemove = (id) => {
-    const updated = favs.filter((m) => m.id !== id);
-    persist(updated);
-  };
-
-  const handleClearAll = () => {
-    persist([]);
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pb-12">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between mb-2">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Your Favourites</h1>
-            <p className="text-sm text-gray-500 mt-1">Saved movies you loved ✨</p>
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+              Your Favourites
+            </h1>
+            <p className="text-sm text-gray-500 mt-1">
+              Saved movies you loved ✨
+            </p>
           </div>
 
           {favs.length > 0 && (
             <div className="flex items-center gap-3">
               <button
-                onClick={handleClearAll}
                 className="px-3 py-2 bg-red-50 text-red-600 rounded-md border border-red-100 hover:bg-red-100 transition"
                 title="Remove all favourites"
               >
@@ -101,15 +86,21 @@ const Favourites = () => {
           <div className="rounded-xl border border-dashed border-gray-200 bg-white/60 p-10 text-center">
             <div className="max-w-lg mx-auto">
               <div className="w-24 h-24 mx-auto flex items-center justify-center rounded-full bg-gradient-to-br from-red-100 to-pink-100 mb-6 shadow-sm">
-                <svg className="w-10 h-10 text-red-600" viewBox="0 0 24 24" fill="currentColor">
+                <svg
+                  className="w-10 h-10 text-red-600"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
                   <path d="M12 21s-7-4.35-9-7.5C0.6 10.15 3 5 7.5 5 9.24 5 10.7 6 12 7.07 13.3 6 14.76 5 16.5 5 21 5 23.4 10.15 21 13.5 19 16.65 12 21 12 21z" />
                 </svg>
               </div>
 
-              <h2 className="text-xl font-semibold text-gray-900 mb-2">No favourites yet</h2>
+              <h2 className="text-xl font-semibold text-gray-900 mb-2">
+                No favourites yet
+              </h2>
               <p className="text-gray-600 mb-6">
-                Start adding your favourite movies — they’ll appear here. You can browse movies and click the ❤️
-                icon to save them.
+                Start adding your favourite movies — they’ll appear here. You
+                can browse movies and click the ❤️ icon to save them.
               </p>
 
               <div className="flex items-center justify-center gap-4">
@@ -120,32 +111,20 @@ const Favourites = () => {
                   Browse Movies
                 </Link>
 
-                <button
-                  onClick={() => {
-                    // quick demo: add a sample item to show how it looks
-                    const sample = {
-                      id: "demo-1",
-                      title: "Demo Movie — Add from Home",
-                      url: "https://via.placeholder.com/400x600.png?text=Demo+Poster",
-                      release_date: "2025-01-01",
-                      description: "This is a sample movie added for demo purposes."
-                    };
-                    persist([sample]);
-                  }}
-                  className="px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-md hover:shadow-sm transition"
-                >
-                  Add Demo
-                </button>
               </div>
             </div>
           </div>
         ) : (
           // GRID OF FAVOURITES
           <div className="mt-6">
-            <div className="grid gap-6 
-                            grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            <div
+              className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+            >
               {favs.map((movie) => (
-                <MovieCard key={movie.id} movie={movie} onRemove={handleRemove} />
+                <MovieCard
+                  key={movie.id}
+                  movie={movie}
+                />
               ))}
             </div>
           </div>
@@ -156,3 +135,4 @@ const Favourites = () => {
 };
 
 export default Favourites;
+ 
