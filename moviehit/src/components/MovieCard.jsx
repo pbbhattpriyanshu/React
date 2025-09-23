@@ -13,7 +13,7 @@ const MovieCard = ({ movie }) => {
           <img
             src={`httpS://image.tmdb.org/t/p/w500${movie.poster_path}`}
             alt={movie.title}
-            className="w-full h-56 object-cover"
+            className="w-full h-80 object-fit"
           />
           {/* fAV BTN*/}
           <div className="absolute top-2 right-2">

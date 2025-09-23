@@ -24,18 +24,37 @@ const Home = () => {
     loadPopularPictures();
   }, []);
 
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    if(!searchQuery.trim()) return;
+    if(loading) return;
+
+    setLoading(true);
+    try {
+      const searchPictures = await searchMovie(searchQuery);
+      setPictures(searchPictures);
+      setError(null);
+    } catch (error) {
+      console.log(`Error in handleSearch ${error}`);
+      setError("Failed to search movies......")
+    } finally {
+      setLoading(false)
+    }
+    setSearchQuery("");
+  }
+
   return (
     <div className="home">
       <form onSubmit={handleSearch} className="search-form">
         <input
           type="text"
           placeholder="Search for movies... "
-          className="search-input p-2 mb-5 w-80 rounded-2xl"
+          className="search-input p-2 mb-5 w-80 rounded-2xl border-2 border-black"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
 
-        <button type="submit" className="search-button">
+        <button type="submit" className="search-button bg-red-600 p-2 rounded-xl ml-2 hover:bg-red-900">
           Search
         </button>
       </form>
@@ -45,7 +64,7 @@ const Home = () => {
       {loading ? (
         <div className="loading">Loading....</div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {pictures
             .filter((movie) =>
               movie.title.toLowerCase().includes(searchQuery.toLowerCase())

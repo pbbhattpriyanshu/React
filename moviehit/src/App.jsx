@@ -8,7 +8,7 @@ function App() {
   return (
     <>
     <Navbar/>
-    <div className='p-10'>
+    <div className='p-7'>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/fav' element={<Favourites/>}/>
