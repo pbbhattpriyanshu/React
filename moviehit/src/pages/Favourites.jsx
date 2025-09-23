@@ -2,12 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-/**
- * A simple MovieCard used by this page. Replace with your own MovieCard if needed.
- * Props:
- *  - movie: { id, title, url, release_date, description }
- *  - onRemove(movieId) -> callback to remove from favourites
- */
 const MovieCard = ({ movie, onRemove }) => {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden relative group">
