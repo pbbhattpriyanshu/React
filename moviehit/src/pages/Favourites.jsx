@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie, onRemove }) => {
+  
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden relative group">
       <img
@@ -127,6 +128,8 @@ const Favourites = () => {
     </div>
   );
 };
+
+
 
 export default Favourites;
  
