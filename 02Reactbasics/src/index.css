@@ -18,6 +18,7 @@ h1 {
   display: flex;
   gap: 2px;
   flex-wrap: wrap;
+  padding: 20px;
 }
 
 
