@@ -2,13 +2,13 @@ import React from "react";
 import { Bookmark } from "lucide-react";
 import "./Job.css";
 
-const JobCard = () => {
+const JobCard = (props) => {
   return (
     <>
       <div className="card">
         <div className="top">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh21MUQIJJhr55Hi8v4WoGKBYycrUvo-94hQ&s"
+            src={props.pic}
             alt="Company name"
           />
           <button>
@@ -18,19 +18,19 @@ const JobCard = () => {
 
         <div className="center">
           <h3>
-            Amazon <span>5 days ago</span>
+            {props.comp_name} <span>{props.posted}</span>
           </h3>
-          <h2>Senior UI/UX Designer</h2>
+          <h2>{props.title}</h2>
           <div className="tags">
-            <h4>Part Time</h4>
-            <h4>Remote</h4>
+            <h4>{props.tag1}</h4>
+            <h4>{props.tag2}</h4>
           </div>
         </div>
 
         <div className="bottom">
           <div>
-            <h3>$120/hr</h3>
-            <p>Mumbai, India</p>
+            <h3>{props.salary}</h3>
+            <p>{props.location}</p>
           </div>
           <button>Apply Now</button>
         </div>
